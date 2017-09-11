@@ -1,4 +1,4 @@
-/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ext4 ro,barrier=0 wait
+/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/system /system ext4 ro wait
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/userdata	/data		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,barrier=0			wait,check,resize,encryptable=/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/metadata
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/userdata	/data		f2fs	rw,noatime,nosuid,nodev,inline_xattr,nobarrier				wait,check,formattable,encryptable=/dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/metadata
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/cache	/cache		ext4	noatime,nosuid,nodev,noauto_da_alloc,discard,barrier=0			wait,check
@@ -8,7 +8,6 @@
 
 /devices/mtk-msdc.0/11240000.MSDC1* auto auto defaults voldmanaged=sdcard1:auto,encryptable=userdata
 /devices/bus.2/11270000.USB3_XHCI* auto vfat defaults voldmanaged=usbotg:auto
-/devices/platform/mt_usb*		auto      auto      defaults        voldmanaged=usb:auto
 
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/nvram /nvram emmc defaults defaults
 /dev/block/platform/mtk-msdc.0/11230000.MSDC0/by-name/proinfo /proinfo emmc defaults defaults
