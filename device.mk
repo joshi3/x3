@@ -257,7 +257,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
 
-
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/configs/hostapd/hostapd_default.conf:system/etc/hostapd/hostapd_default.conf \
 	$(DEVICE_PATH)/configs/hostapd/hostapd.accept:system/etc/hostapd/hostapd.accept \
@@ -291,11 +290,11 @@ PRODUCT_PACKAGES += \
 
 # Mediaserver with system group
 PRODUCT_COPY_FILES += \
-	$(DEVICE_PATH)/etc/init/mediaserver.rc:system/etc/init/mediaserver.rc \
-	$(DEVICE_PATH)/etc/init/cameraserver.rc:system/etc/init/cameraserver.rc \
-	$(DEVICE_PATH)/etc/init/drmserver.rc:system/etc/init/drmserver.rc \
-	$(DEVICE_PATH)/etc/init/mediacodec.rc:system/etc/init/mediacodec.rc \
-	$(DEVICE_PATH)/etc/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
+	$(DEVICE_PATH)/configs/init/mediaserver.rc:system/etc/init/mediaserver.rc \
+	$(DEVICE_PATH)/configs/init/cameraserver.rc:system/etc/init/cameraserver.rc \
+	$(DEVICE_PATH)/configs/init/drmserver.rc:system/etc/init/drmserver.rc \
+	$(DEVICE_PATH)/configs/init/mediacodec.rc:system/etc/init/mediacodec.rc \
+	$(DEVICE_PATH)/configs/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
 
 # camera legacy
 PRODUCT_PACKAGES += \
