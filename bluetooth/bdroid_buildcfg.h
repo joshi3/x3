@@ -17,8 +17,13 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
+#include <cutils/properties.h>
+#include <string.h>
+
 #define BTA_DISABLE_DELAY 1000 /* in milliseconds */
 
 #define BTM_DEF_LOCAL_NAME "LeEco Le 1s"
-
+#define BLE_VND_INCLUDED TRUE
+#define BT_CLEAN_TURN_ON_DISABLED TRUE
+#define KERNEL_MISSING_CLOCK_BOOTTIME_ALARM TRUE
 #endif
