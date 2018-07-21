@@ -450,13 +450,6 @@ static void mmdvfs_parse_arg(va_list arg_ptr, MTK_MMDVFS_CMD *cmd)
                     cmd->camera_mode |= MMDVFS_CAMERA_MODE_FLAG_IVHDR;
                 }
                 break;
-            case MMDVFS_CAMERA_MODE_STEREO:
-                cmd->camera_mode &= ~MMDVFS_CAMERA_MODE_FLAG_STEREO;
-                if (value)
-                {
-                    cmd->camera_mode |= MMDVFS_CAMERA_MODE_FLAG_STEREO;
-                }                               
-                break; 
             case MMDVFS_VENC_SIZE:
                 cmd->venc_size = value;
                 break;
