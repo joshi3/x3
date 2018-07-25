@@ -1,1 +1,1 @@
-add_lunch_combo aim_x3-userdebug
+add_lunch_combo rr_x3-userdebug
