@@ -204,3 +204,6 @@ BOARD_BLUE_LED_PATH := "/sys/class/leds/blue"
 
 # HIDL Manifest
 DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+
+#sepolicy
+BOARD_SEPOLICY_DIRS += device/leeco/x3/sepolicy
