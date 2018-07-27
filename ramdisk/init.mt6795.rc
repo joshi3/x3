@@ -1,9 +1,8 @@
 # MTK platform .rc configure
 
 import init.project.rc
-import init.volte.rc
-import init.mal.rc
-import init.trustonic.rc
+import init.mt6795.usb.rc
+# init.modem.rc should come at the end
 import init.modem.rc
 
 on late-fs
