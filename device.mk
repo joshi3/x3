@@ -50,8 +50,6 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_DEFAULT_PROPERTY_OVERRIDES += \
 	ro.allow.mock.location=0 \
-	ro.secure=0 \
-	ro.adb.secure=0 \
 	ro.debuggable=1 \
 	ro.zygote=zygote64_32 \
 	ro.dalvik.vm.native.bridge=0 \
@@ -134,11 +132,11 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/ramdisk/init.modem.rc:root/init.modem.rc \
 	$(DEVICE_PATH)/ramdisk/init.mt6795.rc:root/init.mt6795.rc \
 	$(DEVICE_PATH)/ramdisk/init.mt6795.usb.rc:root/init.mt6795.usb.rc \
-	$(DEVICE_PATH)/ramdisk/init.project.rc:root/init.project.rc \
 	$(DEVICE_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
-	$(DEVICE_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
-	$(DEVICE_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
-	$(DEVICE_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
+	$(DEVICE_PATH)/ramdisk/init.project.rc:root/init.project.rc \
+#	$(DEVICE_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
+#	$(DEVICE_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
+#	$(DEVICE_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -293,18 +291,9 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/configs/init/mediacodec.rc:system/etc/init/mediacodec.rc \
 	$(DEVICE_PATH)/configs/init/mediadrmserver.rc:system/etc/init/mediadrmserver.rc
 
-# camera legacy
-PRODUCT_PACKAGES += \
-	fs_config_files
-
 PRODUCT_PACKAGES += \
 	libbwc \
 	libm4u
-
-#Camera Legacy
-PRODUCT_PROPERTY_OVERRIDES += \
-     media.stagefright.legacyencoder=true \
-     media.stagefright.less-secure=true
 
 # Vulkan
 PRODUCT_COPY_FILES += \
