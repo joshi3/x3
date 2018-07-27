@@ -32,15 +32,16 @@ PRODUCT_PACKAGES += \
 	
 #memtrack
 PRODUCT_PACKAGES += \
+    android.hardware.memtrack@1.0-imp \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
 	
 # Camera HAL
-#PRODUCT_PACKAGES += \
-#    camera.device@1.0-impl \
-#    camera.device@3.2-impl \
-#    android.hardware.camera.provider@2.4-impl \
-#    android.hardware.camera.provider@2.4-service
+PRODUCT_PACKAGES += \
+    camera.device@1.0-impl \
+    camera.device@3.2-impl \
+    android.hardware.camera.provider@2.4-impl \
+    android.hardware.camera.provider@2.4-service
 
 # Bluetooth HAL
 PRODUCT_PACKAGES += \
@@ -53,7 +54,7 @@ PRODUCT_PACKAGES += \
 
 # Omx
 PRODUCT_PACKAGES += \
-    android.hardware.media.omx@1.0
+    android.hardware.media.omx
 
 # Keymaster HIDL
 PRODUCT_PACKAGES += \
@@ -82,7 +83,8 @@ PRODUCT_PACKAGES += \
 
 # Drm
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl
+    android.hardware.drm@1.0-impl \
+    android.hardware.drm@1.0-service
 
 # Health
 PRODUCT_PACKAGES += \
@@ -93,4 +95,12 @@ PRODUCT_PACKAGES += \
 #PRODUCT_PACKAGES += \
 #    android.hardware.biometrics.fingerprint@2.1-service
 
+# OMX
+PRODUCT_PACKAGES += \
+    libOmxAacEnc \
+    libOmxAmrEnc \
+    libOmxCore \
+    libOmxVdec \
+    libOmxVenc \
+    libstagefrighthw
 	
