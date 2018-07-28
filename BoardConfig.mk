@@ -206,3 +206,6 @@ DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
 
 #sepolicy
 BOARD_SEPOLICY_DIRS += device/leeco/x3/sepolicy
+
+#BLUETOOTH
+BOARD_HAS_MTK_BLUETOOTH := true
