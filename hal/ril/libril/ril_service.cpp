@@ -7789,27 +7789,22 @@ int radio::voiceRadioTechChangedInd(int slotId,
 }
 
 void convertRilCellInfoListToHal(void *response, size_t responseLen, hidl_vec<CellInfo>& records) {
+// TODO:**** check for the version and action accordingly
+ #ifdef MTK_HARDWARE
+     int num = responseLen / sizeof(RIL_CellInfo);
+ #else
     int num = responseLen / sizeof(RIL_CellInfo_v12);
-    records.resize(num);
-#if VDBG
-    RLOGD("convertRilCellInfoListToHal: responseLen=%d, num=%d", (int)responseLen, num);
 #endif
+    records.resize(num);
 
 #ifdef MTK_HARDWARE
     // response is an array of RIL_CellInfo*
-    RIL_CellInfo **rilCellInfohd = (RIL_CellInfo **) response;
+    RIL_CellInfo *rilCellInfo = (RIL_CellInfo *) response;
 #else
     RIL_CellInfo_v12 *rilCellInfo = (RIL_CellInfo_v12 *) response;
 #endif
     for (int i = 0; i < num; i++) {
-#ifdef MTK_HARDWARE
-	RIL_CellInfo *rilCellInfo = rilCellInfohd[i];
-#endif
-	records[i].celInfoType = (CellInfoType) rilCellInfo->cellInfoType;
-#if VDBG
-    RLOGD("rilCellInfo->cellInfoType=%d records[%d].cellInfoType=%d",
-	(int)rilCellInfo->cellInfoType, i, (int)records[i].cellInfoType);
-#endif
+records[i].cellInfoType = (CellInfoType) rillCellInfo->cellInfoType;
 	records[i].registered = rilCellInfo->registered;
 	records[i].timeStampType = (TimeStampType) rilCellInfo->timeStampType;
 	records[i].timeStamp = rilCellInfo->timeStamp;
