@@ -7804,7 +7804,7 @@ void convertRilCellInfoListToHal(void *response, size_t responseLen, hidl_vec<Ce
     RIL_CellInfo_v12 *rilCellInfo = (RIL_CellInfo_v12 *) response;
 #endif
     for (int i = 0; i < num; i++) {
-records[i].cellInfoType = (CellInfoType) rillCellInfo->cellInfoType;
+	records[i].cellInfoType = (CellInfoType) rilCellInfo->cellInfoType;
 	records[i].registered = rilCellInfo->registered;
 	records[i].timeStampType = (TimeStampType) rilCellInfo->timeStampType;
 	records[i].timeStamp = rilCellInfo->timeStamp;

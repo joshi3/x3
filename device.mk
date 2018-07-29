@@ -274,6 +274,11 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libion
 
+#BT
+PRODUCT_PACKAGES += \
+	libbt-vendor \
+	libbluetooth_mtk
+	
 # Lights
 PRODUCT_PACKAGES += \
         lights.mt6795

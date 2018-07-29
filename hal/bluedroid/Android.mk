@@ -1,5 +1,3 @@
-ifeq ($(BOARD_HAS_MTK_BLUETOOTH),true)
-
 LOCAL_PATH := $(call my-dir)
 
 ###########################################################################
@@ -49,5 +47,3 @@ LOCAL_MODULE_OWNER := mtk
 LOCAL_SHARED_LIBRARIES := liblog libbluetooth_mtk
 LOCAL_PRELINK_MODULE := false
 include $(BUILD_SHARED_LIBRARY)
-
-endif
