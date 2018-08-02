@@ -313,3 +313,8 @@ PRODUCT_COPY_FILES += \
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/manifest.xml:system/vendor/manifest.xml
+
+#KEYMASTER
+PRODUCT_PACKAGES += \
+	libkeymaster_messages \
+	libkeymaster1
