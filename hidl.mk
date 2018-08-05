@@ -72,9 +72,9 @@ PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-service
 
 # Lights
-PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service
+#PRODUCT_PACKAGES += \
+#    android.hardware.light@2.0-impl \
+#    android.hardware.light@2.0-service
 
 # Sensors
 PRODUCT_PACKAGES += \

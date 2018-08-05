@@ -1,4 +1,4 @@
-# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2008 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -12,19 +12,25 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-# Add support for red,blue, green (30/04/2018)
 
 LOCAL_PATH:= $(call my-dir)
-
+# HAL module implemenation, not prelinked and stored in
+# hw/<COPYPIX_HARDWARE_MODULE_ID>.<ro.board.platform>.so
 include $(CLEAR_VARS)
+LOCAL_HEADER_LIBRARIES := libhardware_headers
 
 LOCAL_SRC_FILES := lights.c
 LOCAL_MULTILIB := both
+
 LOCAL_MODULE_TAGS := optional
 LOCAL_PRELINK_MODULE := false
 LOCAL_MODULE_RELATIVE_PATH := hw
-LOCAL_SHARED_LIBRARIES := liblog
-LOCAL_MODULE := lights.$(TARGET_BOARD_PLATFORM)
-LOCAL_PROPRIETARY_MODULE := true
 
-include $(BUILD_SHARED_LIBRARY)
+LOCAL_SHARED_LIBRARIES := liblog
+
+LOCAL_MODULE := lights.mt6795
+LOCAL_PROPRIETARY_MODULE := true
+LOCAL_MODULE_OWNER := mtk
+
+include $(MTK_SHARED_LIBRARY)
+include $(DEVICE_PATH)/HIDL/lights/Android.mk

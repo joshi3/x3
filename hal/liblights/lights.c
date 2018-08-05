@@ -1,5 +1,42 @@
+/* Copyright Statement:
+ *
+ * This software/firmware and related documentation ("MediaTek Software") are
+ * protected under relevant copyright laws. The information contained herein is
+ * confidential and proprietary to MediaTek Inc. and/or its licensors. Without
+ * the prior written permission of MediaTek inc. and/or its licensors, any
+ * reproduction, modification, use or disclosure of MediaTek Software, and
+ * information contained herein, in whole or in part, shall be strictly
+ * prohibited.
+ * 
+ * MediaTek Inc. (C) 2010. All rights reserved.
+ * 
+ * BY OPENING THIS FILE, RECEIVER HEREBY UNEQUIVOCALLY ACKNOWLEDGES AND AGREES
+ * THAT THE SOFTWARE/FIRMWARE AND ITS DOCUMENTATIONS ("MEDIATEK SOFTWARE")
+ * RECEIVED FROM MEDIATEK AND/OR ITS REPRESENTATIVES ARE PROVIDED TO RECEIVER
+ * ON AN "AS-IS" BASIS ONLY. MEDIATEK EXPRESSLY DISCLAIMS ANY AND ALL
+ * WARRANTIES, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE IMPLIED
+ * WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE OR
+ * NONINFRINGEMENT. NEITHER DOES MEDIATEK PROVIDE ANY WARRANTY WHATSOEVER WITH
+ * RESPECT TO THE SOFTWARE OF ANY THIRD PARTY WHICH MAY BE USED BY,
+ * INCORPORATED IN, OR SUPPLIED WITH THE MEDIATEK SOFTWARE, AND RECEIVER AGREES
+ * TO LOOK ONLY TO SUCH THIRD PARTY FOR ANY WARRANTY CLAIM RELATING THERETO.
+ * RECEIVER EXPRESSLY ACKNOWLEDGES THAT IT IS RECEIVER'S SOLE RESPONSIBILITY TO
+ * OBTAIN FROM ANY THIRD PARTY ALL PROPER LICENSES CONTAINED IN MEDIATEK
+ * SOFTWARE. MEDIATEK SHALL ALSO NOT BE RESPONSIBLE FOR ANY MEDIATEK SOFTWARE
+ * RELEASES MADE TO RECEIVER'S SPECIFICATION OR TO CONFORM TO A PARTICULAR
+ * STANDARD OR OPEN FORUM. RECEIVER'S SOLE AND EXCLUSIVE REMEDY AND MEDIATEK'S
+ * ENTIRE AND CUMULATIVE LIABILITY WITH RESPECT TO THE MEDIATEK SOFTWARE
+ * RELEASED HEREUNDER WILL BE, AT MEDIATEK'S OPTION, TO REVISE OR REPLACE THE
+ * MEDIATEK SOFTWARE AT ISSUE, OR REFUND ANY SOFTWARE LICENSE FEES OR SERVICE
+ * CHARGE PAID BY RECEIVER TO MEDIATEK FOR SUCH MEDIATEK SOFTWARE AT ISSUE.
+ *
+ * The following software/firmware and/or related documentation ("MediaTek
+ * Software") have been modified by MediaTek Inc. All revisions are subject to
+ * any receiver's applicable license agreements with MediaTek Inc.
+ */
+
 /*
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -14,9 +51,6 @@
  * limitations under the License.
  */
 
-/*
- * Add support for red,blue,green (30/04/2018)
- */
 
 #define LOG_TAG "lights"
 
@@ -41,11 +75,17 @@
 
 static pthread_once_t g_init = PTHREAD_ONCE_INIT;
 static pthread_mutex_t g_lock = PTHREAD_MUTEX_INITIALIZER;
+static int g_haveTrackballLight = 0;
 static struct light_state_t g_notification;
 static struct light_state_t g_battery;
 static int g_backlight = 255;
+static int g_trackball = -1;
 static int g_buttons = 0;
 static int g_attention = 0;
+
+/* TRACKBALL BACKLIGHT */
+char const*const TRACKBALL_FILE
+        = "/sys/class/leds/jogball-backlight/brightness";
 
 /* RED LED */
 char const*const RED_LED_FILE
@@ -90,9 +130,26 @@ char const*const BLUE_DELAY_OFF_FILE
 char const*const LCD_FILE
         = "/sys/class/leds/lcd-backlight/brightness";
 
+/* KEYBOARD BACKLIGHT */
+char const*const KEYBOARD_FILE
+        = "/sys/class/leds/keyboard-backlight/brightness";
+
 /* BUTTON BACKLIGHT */
 char const*const BUTTON_FILE
         = "/sys/class/leds/button-backlight/brightness";
+
+//ALPS0804285 add for delay
+int led_wait_delay(unsigned int ms)
+{
+	struct timeval begin, curr;
+	long long time_diff = 0;
+	gettimeofday(&begin, NULL);
+	while ((unsigned int)time_diff < ms) {
+		gettimeofday(&curr, NULL);
+		time_diff = (curr.tv_sec*1000LL + curr.tv_usec/1000) - (begin.tv_sec*1000LL + begin.tv_usec/1000);
+	}
+	return 0;
+}
 
 /**
  * device methods
@@ -100,7 +157,12 @@ char const*const BUTTON_FILE
 
 void init_globals(void)
 {
+    // init the mutex
     pthread_mutex_init(&g_lock, NULL);
+
+    // figure out if we have the trackball LED or not
+    g_haveTrackballLight = (access(TRACKBALL_FILE, W_OK) == 0) ? 1 : 0;
+
 }
 
 static int
@@ -178,6 +240,11 @@ blink_red(int level, int onMS, int offMS)
 	else if (nowStatus == 1) {
 //        	write_int(RED_LED_FILE, level); // default full brightness
 		write_str(RED_TRIGGER_FILE, "timer");
+		while (((access(RED_DELAY_OFF_FILE, F_OK) == -1) || (access(RED_DELAY_OFF_FILE, R_OK|W_OK) == -1)) && i<10) {
+			ALOGD("RED_DELAY_OFF_FILE doesn't exist or cannot write!!\n");
+			led_wait_delay(5);//sleep 5ms for wait kernel LED class create led delay_off/delay_on node of fs
+			i++;
+		}
 		write_int(RED_DELAY_OFF_FILE, offMS);
 		write_int(RED_DELAY_ON_FILE, onMS);
 	}
@@ -217,6 +284,11 @@ blink_green(int level, int onMS, int offMS)
 	else if (nowStatus == 1) {
 //        	write_int(GREEN_LED_FILE, level); // default full brightness
 		write_str(GREEN_TRIGGER_FILE, "timer");
+		while (((access(GREEN_DELAY_OFF_FILE, F_OK) == -1) || (access(GREEN_DELAY_OFF_FILE, R_OK|W_OK) == -1)) && i<10) {
+			ALOGD("GREEN_DELAY_OFF_FILE doesn't exist or cannot write!!\n");
+			led_wait_delay(5);//sleep 5ms for wait kernel LED class create led delay_off/delay_on node of fs
+			i++;
+		}
 		write_int(GREEN_DELAY_OFF_FILE, offMS);
 		write_int(GREEN_DELAY_ON_FILE, onMS);
 	}
@@ -256,6 +328,11 @@ blink_blue(int level, int onMS, int offMS)
 	else if (nowStatus == 1) {
 //        	write_int(BLUE_LED_FILE, level); // default full brightness
 		write_str(BLUE_TRIGGER_FILE, "timer");
+		while (((access(BLUE_DELAY_OFF_FILE, F_OK) == -1) || (access(BLUE_DELAY_OFF_FILE, R_OK|W_OK) == -1)) && i<10) {
+			ALOGD("BLUE_DELAY_OFF_FILE doesn't exist or cannot write!!\n");
+			led_wait_delay(5);//sleep 5ms for wait kernel LED class create led delay_off/delay_on node of fs
+			i++;
+		}
 		write_int(BLUE_DELAY_OFF_FILE, offMS);
 		write_int(BLUE_DELAY_ON_FILE, onMS);
 	}
@@ -267,6 +344,26 @@ blink_blue(int level, int onMS, int offMS)
 	preStatus = nowStatus;
 
 	return 0;
+}
+
+static int
+handle_trackball_light_locked(__attribute__((__unused__)) struct light_device_t* dev)
+{
+    int mode = g_attention;
+
+    if (mode == 7 && g_backlight) {
+        mode = 0;
+    }
+    ALOGV("%s g_backlight = %d, mode = %d, g_attention = %d\n",
+        __func__, g_backlight, mode, g_attention);
+
+    // If the value isn't changing, don't set it, because this
+    // can reset the timer on the breathing mode, which looks bad.
+    if (g_trackball == mode) {
+        return 0;
+    }
+
+    return write_int(TRACKBALL_FILE, mode);
 }
 
 static int
@@ -286,6 +383,21 @@ set_light_backlight(struct light_device_t* dev,
     pthread_mutex_lock(&g_lock);
     g_backlight = brightness;
     err = write_int(LCD_FILE, brightness);
+    if (g_haveTrackballLight) {
+        handle_trackball_light_locked(dev);
+    }
+    pthread_mutex_unlock(&g_lock);
+    return err;
+}
+
+static int
+set_light_keyboard(__attribute__((__unused__)) struct light_device_t* dev,
+        struct light_state_t const* state)
+{
+    int err = 0;
+    int on = is_lit(state);
+    pthread_mutex_lock(&g_lock);
+    err = write_int(KEYBOARD_FILE, on?255:0);
     pthread_mutex_unlock(&g_lock);
     return err;
 }
@@ -381,6 +493,9 @@ set_light_battery(struct light_device_t* dev,
 {
     pthread_mutex_lock(&g_lock);
     g_battery = *state;
+    if (g_haveTrackballLight) {
+        set_speaker_light_locked(dev, state);
+    }
     handle_speaker_battery_locked(dev);
     pthread_mutex_unlock(&g_lock);
     return 0;
@@ -392,6 +507,11 @@ set_light_notifications(struct light_device_t* dev,
 {
     pthread_mutex_lock(&g_lock);
     g_notification = *state;
+    ALOGV("set_light_notifications g_trackball=%d color=0x%08x",
+            g_trackball, state->color);
+    if (g_haveTrackballLight) {
+        handle_trackball_light_locked(dev);
+    }
     handle_speaker_battery_locked(dev);
     pthread_mutex_unlock(&g_lock);
     return 0;
@@ -402,10 +522,15 @@ set_light_attention(struct light_device_t* dev,
         struct light_state_t const* state)
 {
     pthread_mutex_lock(&g_lock);
+    ALOGV("set_light_attention g_trackball=%d color=0x%08x",
+            g_trackball, state->color);
     if (state->flashMode == LIGHT_FLASH_HARDWARE) {
         g_attention = state->flashOnMS;
     } else if (state->flashMode == LIGHT_FLASH_NONE) {
         g_attention = 0;
+    }
+    if (g_haveTrackballLight) {
+        handle_trackball_light_locked(dev);
     }
     pthread_mutex_unlock(&g_lock);
     return 0;
@@ -439,6 +564,11 @@ static int open_lights(const struct hw_module_t* module, char const* name,
     if (0 == strcmp(LIGHT_ID_BACKLIGHT, name)) {
         set_light = set_light_backlight;
         if (access(LCD_FILE, F_OK) < 0)
+            return -errno;
+    }
+    else if (0 == strcmp(LIGHT_ID_KEYBOARD, name)) {
+        set_light = set_light_keyboard;
+        if (access(KEYBOARD_FILE, F_OK) < 0)
             return -errno;
     }
     else if (0 == strcmp(LIGHT_ID_BUTTONS, name)) {
@@ -508,7 +638,7 @@ struct hw_module_t HAL_MODULE_INFO_SYM = {
     //.version_major = 1,
     //.version_minor = 0,
     .id = LIGHTS_HARDWARE_MODULE_ID,
-    .name = "lights Module",
-    .author = "mech",
+    .name = "MTK lights Module",
+    .author = "MediaTek",
     .methods = &lights_module_methods,
 };
