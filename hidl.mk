@@ -73,8 +73,8 @@ PRODUCT_PACKAGES += \
 
 # Lights
 #PRODUCT_PACKAGES += \
-#    android.hardware.light@2.0-impl \
-#    android.hardware.light@2.0-service
+#    android.hardware.light@2.0-impl-mediatek \
+#    android.hardware.light@2.0-service-mediatek
 
 # Sensors
 PRODUCT_PACKAGES += \
@@ -92,8 +92,9 @@ PRODUCT_PACKAGES += \
     android.hardware.health@1.0-service
 
 # Fingerprint
-#PRODUCT_PACKAGES += \
-#    android.hardware.biometrics.fingerprint@2.1-service
+PRODUCT_PACKAGES += \
+	android.hardware.biometrics.fingerprint@2.1-impl \
+    android.hardware.biometrics.fingerprint@2.1-service
 
 # OMX
 PRODUCT_PACKAGES += \

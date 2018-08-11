@@ -32,5 +32,5 @@ LOCAL_MODULE := lights.mt6795
 LOCAL_PROPRIETARY_MODULE := true
 LOCAL_MODULE_OWNER := mtk
 
-include $(MTK_SHARED_LIBRARY)
-include $(DEVICE_PATH)/HIDL/lights/Android.mk
+include $(BUILD_SHARED_LIBRARY)
+include $(LOCAL_PATH)/lights/Android.mk
