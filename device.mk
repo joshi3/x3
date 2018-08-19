@@ -320,3 +320,14 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libkeymaster_messages \
 	libkeymaster1
+
+PRODUCT_PACKAGES += \
+	librilproxy \
+	librilproxyutils \
+	mtk-rilproxy \
+	rilproxy \
+	librpc \
+	librilutilsmtk \
+	libratconfig \
+	libc2kutils
+	
