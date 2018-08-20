@@ -21,7 +21,7 @@
 #include <vendor/mediatek/hardware/radio/2.3/IRadio.h>
 #include <vendor/mediatek/hardware/radio/2.3/IRadioResponse.h>
 #include <vendor/mediatek/hardware/radio/2.3/IRadioIndication.h>
-#include <device/leeco/x3/HIDL/radio/deprecated/1.1/IOemHook.h>
+#include <vendor/mediatek/hardware/radio/deprecated/1.1/IOemHook.h>
 
 #include <hwbinder/IPCThreadState.h>
 #include <hwbinder/ProcessState.h>

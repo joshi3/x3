@@ -38,12 +38,12 @@
  *****************************************************************************/
 #include "RpLwxController.h"
 #include "RfxRootController.h"
-
+/*
 #ifdef MTK_NVRAM_SUPPORT
 #include <libnvram.h>
-#include <Custom_NvRam_LID.h>
+//#include <Custom_NvRam_LID.h>
 #endif
-
+*/
 #include <cutils/properties.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -110,7 +110,7 @@ void RpLwxController::initLwxSupport() {
 
     logD(RFX_LOG_TAG, "initLwxSupport:%d", mLwxCapability);
 }
-
+/*
 bool RpLwxController::initWifiInfo() {
 #ifdef MTK_NVRAM_SUPPORT
     ALOGV("initWifiInfo\n");
@@ -161,7 +161,7 @@ bool RpLwxController::initWifiInfo() {
 #endif
     return false;
 }
-
+*/
 void RpLwxController::onRadioStateChanged(RfxStatusKeyEnum key,
     RfxVariant old_value, RfxVariant value) {
 
@@ -170,7 +170,7 @@ void RpLwxController::onRadioStateChanged(RfxStatusKeyEnum key,
 
     RIL_RadioState radioState = (RIL_RadioState) value.asInt();
 
-    if (radioState == RADIO_STATE_OFF) {
+/*    if (radioState == RADIO_STATE_OFF) {
         if (initWifiInfo()) {
             sp<RfxMessage> msg = RfxMessage::obtainRequest(getSlotId(),
                         RADIO_TECH_GROUP_GSM, RIL_REQUEST_OEM_HOOK_STRINGS);
@@ -186,4 +186,5 @@ void RpLwxController::onRadioStateChanged(RfxStatusKeyEnum key,
             requestToRild(msg);
         }
     }
+*/
 }

@@ -19,7 +19,7 @@ LOCAL_JAVA_LIBRARIES := \
 #
 # Build INetdagent.hal
 #
-GEN := $(intermediates)/device/leeco/x3/hidl/netdagent/V1_0/INetdagent.java
+GEN := $(intermediates)/vendor/mediatek/hardware/netdagent/V1_0/INetdagent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/INetdagent.hal
@@ -54,7 +54,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 #
 # Build INetdagent.hal
 #
-GEN := $(intermediates)/device/leeco/x3/hidl/netdagent/V1_0/INetdagent.java
+GEN := $(intermediates)/vendor/mediatek/hardware/netdagent/V1_0/INetdagent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/INetdagent.hal

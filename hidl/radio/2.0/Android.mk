@@ -5,7 +5,7 @@ LOCAL_PATH := $(call my-dir)
 ################################################################################
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := vendor.mediatek.hardware.radio-V1.1-java
+LOCAL_MODULE := vendor.mediatek.hardware.radio-V2.0-java
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
 intermediates := $(call local-generated-sources-dir, COMMON)
@@ -14,13 +14,14 @@ HIDL := $(HOST_OUT_EXECUTABLES)/hidl-gen$(HOST_EXECUTABLE_SUFFIX)
 
 LOCAL_JAVA_LIBRARIES := \
     android.hardware.radio-V1.0-java \
+    android.hardware.radio-V1.1-java \
     android.hidl.base-V1.0-java \
 
 
 #
 # Build types.hal (CallForwardInfoEx)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CallForwardInfoEx.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CallForwardInfoEx.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -31,7 +32,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CallForwardInfoEx
+        vendor.mediatek.hardware.radio@2.0::types.CallForwardInfoEx
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -40,7 +41,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (CfuStatusNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CfuStatusNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CfuStatusNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -51,7 +52,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CfuStatusNotification
+        vendor.mediatek.hardware.radio@2.0::types.CfuStatusNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -60,7 +61,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (CipherNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CipherNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CipherNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -71,7 +72,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CipherNotification
+        vendor.mediatek.hardware.radio@2.0::types.CipherNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -80,7 +81,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (ConferenceDial)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/ConferenceDial.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/ConferenceDial.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -91,7 +92,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.ConferenceDial
+        vendor.mediatek.hardware.radio@2.0::types.ConferenceDial
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -100,7 +101,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (CrssNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CrssNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CrssNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -111,7 +112,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CrssNotification
+        vendor.mediatek.hardware.radio@2.0::types.CrssNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -120,7 +121,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (DedicateDataCall)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/DedicateDataCall.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/DedicateDataCall.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -131,7 +132,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.DedicateDataCall
+        vendor.mediatek.hardware.radio@2.0::types.DedicateDataCall
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -140,7 +141,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (EtwsNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/EtwsNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/EtwsNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -151,7 +152,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.EtwsNotification
+        vendor.mediatek.hardware.radio@2.0::types.EtwsNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -160,7 +161,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (IncomingCallNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IncomingCallNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IncomingCallNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -171,7 +172,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.IncomingCallNotification
+        vendor.mediatek.hardware.radio@2.0::types.IncomingCallNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -180,7 +181,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (MtkApnTypes)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/MtkApnTypes.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/MtkApnTypes.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -191,7 +192,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.MtkApnTypes
+        vendor.mediatek.hardware.radio@2.0::types.MtkApnTypes
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -200,7 +201,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (MtkDataProfileInfo)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/MtkDataProfileInfo.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/MtkDataProfileInfo.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -211,7 +212,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.MtkDataProfileInfo
+        vendor.mediatek.hardware.radio@2.0::types.MtkDataProfileInfo
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -220,7 +221,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (MtkSetupDataCallResult)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/MtkSetupDataCallResult.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/MtkSetupDataCallResult.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -231,7 +232,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.MtkSetupDataCallResult
+        vendor.mediatek.hardware.radio@2.0::types.MtkSetupDataCallResult
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -240,7 +241,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (OperatorInfoWithAct)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/OperatorInfoWithAct.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/OperatorInfoWithAct.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -251,7 +252,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.OperatorInfoWithAct
+        vendor.mediatek.hardware.radio@2.0::types.OperatorInfoWithAct
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -260,7 +261,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PcoDataAttachedInfo)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PcoDataAttachedInfo.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PcoDataAttachedInfo.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -271,7 +272,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PcoDataAttachedInfo
+        vendor.mediatek.hardware.radio@2.0::types.PcoDataAttachedInfo
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -280,7 +281,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PhbEntryExt)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PhbEntryExt.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PhbEntryExt.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -291,7 +292,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PhbEntryExt
+        vendor.mediatek.hardware.radio@2.0::types.PhbEntryExt
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -300,7 +301,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PhbEntryStructure)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PhbEntryStructure.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PhbEntryStructure.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -311,7 +312,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PhbEntryStructure
+        vendor.mediatek.hardware.radio@2.0::types.PhbEntryStructure
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -320,7 +321,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PhbMemStorageResponse)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PhbMemStorageResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PhbMemStorageResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -331,7 +332,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PhbMemStorageResponse
+        vendor.mediatek.hardware.radio@2.0::types.PhbMemStorageResponse
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -340,7 +341,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PktFilter)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PktFilter.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PktFilter.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -351,7 +352,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PktFilter
+        vendor.mediatek.hardware.radio@2.0::types.PktFilter
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -360,7 +361,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (Qos)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/Qos.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/Qos.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -371,7 +372,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.Qos
+        vendor.mediatek.hardware.radio@2.0::types.Qos
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -380,7 +381,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (SimAuthStructure)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/SimAuthStructure.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/SimAuthStructure.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -391,7 +392,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.SimAuthStructure
+        vendor.mediatek.hardware.radio@2.0::types.SimAuthStructure
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -400,7 +401,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (SmsMemStatus)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/SmsMemStatus.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/SmsMemStatus.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -411,7 +412,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.SmsMemStatus
+        vendor.mediatek.hardware.radio@2.0::types.SmsMemStatus
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -420,7 +421,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (SmsParams)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/SmsParams.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/SmsParams.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -431,7 +432,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.SmsParams
+        vendor.mediatek.hardware.radio@2.0::types.SmsParams
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -440,7 +441,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (Tft)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/Tft.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/Tft.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -451,7 +452,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.Tft
+        vendor.mediatek.hardware.radio@2.0::types.Tft
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -460,7 +461,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (TftParameter)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/TftParameter.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/TftParameter.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -471,7 +472,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.TftParameter
+        vendor.mediatek.hardware.radio@2.0::types.TftParameter
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -480,7 +481,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (VsimEvent)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/VsimEvent.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/VsimEvent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -491,7 +492,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.VsimEvent
+        vendor.mediatek.hardware.radio@2.0::types.VsimEvent
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -500,7 +501,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (VsimMessage)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/VsimMessage.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/VsimMessage.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -511,7 +512,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.VsimMessage
+        vendor.mediatek.hardware.radio@2.0::types.VsimMessage
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -520,7 +521,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (VsimOperationEvent)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/VsimOperationEvent.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/VsimOperationEvent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -531,7 +532,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.VsimOperationEvent
+        vendor.mediatek.hardware.radio@2.0::types.VsimOperationEvent
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -540,7 +541,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IAtciIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IAtciIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IAtciIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IAtciIndication.hal
@@ -551,7 +552,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IAtciIndication
+        vendor.mediatek.hardware.radio@2.0::IAtciIndication
 
 $(GEN): $(LOCAL_PATH)/IAtciIndication.hal
 	$(transform-generated-source)
@@ -560,7 +561,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IAtciResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IAtciResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IAtciResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IAtciResponse.hal
@@ -571,7 +572,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IAtciResponse
+        vendor.mediatek.hardware.radio@2.0::IAtciResponse
 
 $(GEN): $(LOCAL_PATH)/IAtciResponse.hal
 	$(transform-generated-source)
@@ -580,7 +581,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IImsRadioIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IImsRadioIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IImsRadioIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IImsRadioIndication.hal
@@ -593,7 +594,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IImsRadioIndication
+        vendor.mediatek.hardware.radio@2.0::IImsRadioIndication
 
 $(GEN): $(LOCAL_PATH)/IImsRadioIndication.hal
 	$(transform-generated-source)
@@ -602,7 +603,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IImsRadioResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IImsRadioResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IImsRadioResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IImsRadioResponse.hal
@@ -615,7 +616,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IImsRadioResponse
+        vendor.mediatek.hardware.radio@2.0::IImsRadioResponse
 
 $(GEN): $(LOCAL_PATH)/IImsRadioResponse.hal
 	$(transform-generated-source)
@@ -624,7 +625,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IRadio.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IRadio.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IRadio.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IRadio.hal
@@ -649,7 +650,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IRadio
+        vendor.mediatek.hardware.radio@2.0::IRadio
 
 $(GEN): $(LOCAL_PATH)/IRadio.hal
 	$(transform-generated-source)
@@ -658,7 +659,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IRadioIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IRadioIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IRadioIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IRadioIndication.hal
@@ -671,7 +672,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IRadioIndication
+        vendor.mediatek.hardware.radio@2.0::IRadioIndication
 
 $(GEN): $(LOCAL_PATH)/IRadioIndication.hal
 	$(transform-generated-source)
@@ -680,7 +681,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IRadioResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IRadioResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IRadioResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IRadioResponse.hal
@@ -693,7 +694,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IRadioResponse
+        vendor.mediatek.hardware.radio@2.0::IRadioResponse
 
 $(GEN): $(LOCAL_PATH)/IRadioResponse.hal
 	$(transform-generated-source)
@@ -702,7 +703,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build ISap.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/ISap.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/ISap.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/ISap.hal
@@ -713,7 +714,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::ISap
+        vendor.mediatek.hardware.radio@2.0::ISap
 
 $(GEN): $(LOCAL_PATH)/ISap.hal
 	$(transform-generated-source)
@@ -722,7 +723,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build ISapCallback.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/ISapCallback.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/ISapCallback.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/ISapCallback.hal
@@ -733,7 +734,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::ISapCallback
+        vendor.mediatek.hardware.radio@2.0::ISapCallback
 
 $(GEN): $(LOCAL_PATH)/ISapCallback.hal
 	$(transform-generated-source)
@@ -744,7 +745,7 @@ include $(BUILD_JAVA_LIBRARY)
 ################################################################################
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := vendor.mediatek.hardware.radio-V1.1-java-static
+LOCAL_MODULE := vendor.mediatek.hardware.radio-V2.0-java-static
 LOCAL_MODULE_CLASS := JAVA_LIBRARIES
 
 intermediates := $(call local-generated-sources-dir, COMMON)
@@ -753,13 +754,14 @@ HIDL := $(HOST_OUT_EXECUTABLES)/hidl-gen$(HOST_EXECUTABLE_SUFFIX)
 
 LOCAL_STATIC_JAVA_LIBRARIES := \
     android.hardware.radio-V1.0-java-static \
+    android.hardware.radio-V1.1-java-static \
     android.hidl.base-V1.0-java-static \
 
 
 #
 # Build types.hal (CallForwardInfoEx)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CallForwardInfoEx.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CallForwardInfoEx.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -770,7 +772,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CallForwardInfoEx
+        vendor.mediatek.hardware.radio@2.0::types.CallForwardInfoEx
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -779,7 +781,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (CfuStatusNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CfuStatusNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CfuStatusNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -790,7 +792,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CfuStatusNotification
+        vendor.mediatek.hardware.radio@2.0::types.CfuStatusNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -799,7 +801,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (CipherNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CipherNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CipherNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -810,7 +812,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CipherNotification
+        vendor.mediatek.hardware.radio@2.0::types.CipherNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -819,7 +821,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (ConferenceDial)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/ConferenceDial.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/ConferenceDial.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -830,7 +832,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.ConferenceDial
+        vendor.mediatek.hardware.radio@2.0::types.ConferenceDial
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -839,7 +841,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (CrssNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/CrssNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/CrssNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -850,7 +852,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.CrssNotification
+        vendor.mediatek.hardware.radio@2.0::types.CrssNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -859,7 +861,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (DedicateDataCall)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/DedicateDataCall.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/DedicateDataCall.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -870,7 +872,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.DedicateDataCall
+        vendor.mediatek.hardware.radio@2.0::types.DedicateDataCall
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -879,7 +881,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (EtwsNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/EtwsNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/EtwsNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -890,7 +892,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.EtwsNotification
+        vendor.mediatek.hardware.radio@2.0::types.EtwsNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -899,7 +901,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (IncomingCallNotification)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IncomingCallNotification.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IncomingCallNotification.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -910,7 +912,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.IncomingCallNotification
+        vendor.mediatek.hardware.radio@2.0::types.IncomingCallNotification
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -919,7 +921,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (MtkApnTypes)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/MtkApnTypes.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/MtkApnTypes.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -930,7 +932,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.MtkApnTypes
+        vendor.mediatek.hardware.radio@2.0::types.MtkApnTypes
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -939,7 +941,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (MtkDataProfileInfo)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/MtkDataProfileInfo.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/MtkDataProfileInfo.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -950,7 +952,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.MtkDataProfileInfo
+        vendor.mediatek.hardware.radio@2.0::types.MtkDataProfileInfo
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -959,7 +961,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (MtkSetupDataCallResult)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/MtkSetupDataCallResult.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/MtkSetupDataCallResult.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -970,7 +972,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.MtkSetupDataCallResult
+        vendor.mediatek.hardware.radio@2.0::types.MtkSetupDataCallResult
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -979,7 +981,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (OperatorInfoWithAct)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/OperatorInfoWithAct.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/OperatorInfoWithAct.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -990,7 +992,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.OperatorInfoWithAct
+        vendor.mediatek.hardware.radio@2.0::types.OperatorInfoWithAct
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -999,7 +1001,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PcoDataAttachedInfo)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PcoDataAttachedInfo.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PcoDataAttachedInfo.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1010,7 +1012,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PcoDataAttachedInfo
+        vendor.mediatek.hardware.radio@2.0::types.PcoDataAttachedInfo
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1019,7 +1021,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PhbEntryExt)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PhbEntryExt.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PhbEntryExt.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1030,7 +1032,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PhbEntryExt
+        vendor.mediatek.hardware.radio@2.0::types.PhbEntryExt
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1039,7 +1041,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PhbEntryStructure)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PhbEntryStructure.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PhbEntryStructure.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1050,7 +1052,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PhbEntryStructure
+        vendor.mediatek.hardware.radio@2.0::types.PhbEntryStructure
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1059,7 +1061,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PhbMemStorageResponse)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PhbMemStorageResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PhbMemStorageResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1070,7 +1072,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PhbMemStorageResponse
+        vendor.mediatek.hardware.radio@2.0::types.PhbMemStorageResponse
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1079,7 +1081,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (PktFilter)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/PktFilter.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/PktFilter.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1090,7 +1092,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.PktFilter
+        vendor.mediatek.hardware.radio@2.0::types.PktFilter
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1099,7 +1101,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (Qos)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/Qos.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/Qos.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1110,7 +1112,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.Qos
+        vendor.mediatek.hardware.radio@2.0::types.Qos
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1119,7 +1121,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (SimAuthStructure)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/SimAuthStructure.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/SimAuthStructure.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1130,7 +1132,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.SimAuthStructure
+        vendor.mediatek.hardware.radio@2.0::types.SimAuthStructure
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1139,7 +1141,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (SmsMemStatus)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/SmsMemStatus.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/SmsMemStatus.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1150,7 +1152,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.SmsMemStatus
+        vendor.mediatek.hardware.radio@2.0::types.SmsMemStatus
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1159,7 +1161,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (SmsParams)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/SmsParams.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/SmsParams.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1170,7 +1172,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.SmsParams
+        vendor.mediatek.hardware.radio@2.0::types.SmsParams
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1179,7 +1181,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (Tft)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/Tft.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/Tft.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1190,7 +1192,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.Tft
+        vendor.mediatek.hardware.radio@2.0::types.Tft
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1199,7 +1201,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (TftParameter)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/TftParameter.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/TftParameter.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1210,7 +1212,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.TftParameter
+        vendor.mediatek.hardware.radio@2.0::types.TftParameter
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1219,7 +1221,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (VsimEvent)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/VsimEvent.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/VsimEvent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1230,7 +1232,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.VsimEvent
+        vendor.mediatek.hardware.radio@2.0::types.VsimEvent
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1239,7 +1241,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (VsimMessage)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/VsimMessage.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/VsimMessage.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1250,7 +1252,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.VsimMessage
+        vendor.mediatek.hardware.radio@2.0::types.VsimMessage
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1259,7 +1261,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build types.hal (VsimOperationEvent)
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/VsimOperationEvent.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/VsimOperationEvent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/types.hal
@@ -1270,7 +1272,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::types.VsimOperationEvent
+        vendor.mediatek.hardware.radio@2.0::types.VsimOperationEvent
 
 $(GEN): $(LOCAL_PATH)/types.hal
 	$(transform-generated-source)
@@ -1279,7 +1281,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IAtciIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IAtciIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IAtciIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IAtciIndication.hal
@@ -1290,7 +1292,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IAtciIndication
+        vendor.mediatek.hardware.radio@2.0::IAtciIndication
 
 $(GEN): $(LOCAL_PATH)/IAtciIndication.hal
 	$(transform-generated-source)
@@ -1299,7 +1301,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IAtciResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IAtciResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IAtciResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IAtciResponse.hal
@@ -1310,7 +1312,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IAtciResponse
+        vendor.mediatek.hardware.radio@2.0::IAtciResponse
 
 $(GEN): $(LOCAL_PATH)/IAtciResponse.hal
 	$(transform-generated-source)
@@ -1319,7 +1321,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IImsRadioIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IImsRadioIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IImsRadioIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IImsRadioIndication.hal
@@ -1332,7 +1334,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IImsRadioIndication
+        vendor.mediatek.hardware.radio@2.0::IImsRadioIndication
 
 $(GEN): $(LOCAL_PATH)/IImsRadioIndication.hal
 	$(transform-generated-source)
@@ -1341,7 +1343,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IImsRadioResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IImsRadioResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IImsRadioResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IImsRadioResponse.hal
@@ -1354,7 +1356,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IImsRadioResponse
+        vendor.mediatek.hardware.radio@2.0::IImsRadioResponse
 
 $(GEN): $(LOCAL_PATH)/IImsRadioResponse.hal
 	$(transform-generated-source)
@@ -1363,7 +1365,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IRadio.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IRadio.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IRadio.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IRadio.hal
@@ -1388,7 +1390,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IRadio
+        vendor.mediatek.hardware.radio@2.0::IRadio
 
 $(GEN): $(LOCAL_PATH)/IRadio.hal
 	$(transform-generated-source)
@@ -1397,7 +1399,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IRadioIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IRadioIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IRadioIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IRadioIndication.hal
@@ -1410,7 +1412,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IRadioIndication
+        vendor.mediatek.hardware.radio@2.0::IRadioIndication
 
 $(GEN): $(LOCAL_PATH)/IRadioIndication.hal
 	$(transform-generated-source)
@@ -1419,7 +1421,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IRadioResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/IRadioResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/IRadioResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IRadioResponse.hal
@@ -1432,7 +1434,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::IRadioResponse
+        vendor.mediatek.hardware.radio@2.0::IRadioResponse
 
 $(GEN): $(LOCAL_PATH)/IRadioResponse.hal
 	$(transform-generated-source)
@@ -1441,7 +1443,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build ISap.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/ISap.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/ISap.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/ISap.hal
@@ -1452,7 +1454,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::ISap
+        vendor.mediatek.hardware.radio@2.0::ISap
 
 $(GEN): $(LOCAL_PATH)/ISap.hal
 	$(transform-generated-source)
@@ -1461,7 +1463,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build ISapCallback.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/V1_1/ISapCallback.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/V2_0/ISapCallback.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/ISapCallback.hal
@@ -1472,7 +1474,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
         -rvendor.mediatek.hardware:device/leeco/x3/hidl \
-        vendor.mediatek.hardware.radio@1.1::ISapCallback
+        vendor.mediatek.hardware.radio@2.0::ISapCallback
 
 $(GEN): $(LOCAL_PATH)/ISapCallback.hal
 	$(transform-generated-source)

@@ -39,5 +39,8 @@ LOCAL_SHARED_LIBRARIES += \
     android.hardware.radio@1.0 \
     android.hardware.radio@1.1 \
     android.hardware.radio.deprecated@1.0 \
-		vendor.mediatek.hardware.radio.deprecated@1.1 \
-		vendor.mediatek.hardware.radio@1.1
+    vendor.mediatek.hardware.radio.deprecated@1.1_vendor \
+    vendor.mediatek.hardware.radio@2.0_vendor \
+    vendor.mediatek.hardware.radio@2.1_vendor \
+    vendor.mediatek.hardware.radio@2.2_vendor \
+    vendor.mediatek.hardware.radio@2.3_vendor

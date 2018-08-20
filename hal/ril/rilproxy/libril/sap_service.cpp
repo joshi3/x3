@@ -16,7 +16,7 @@
 
 #define LOG_TAG "RIL_SAP"
 
-#include <device/leeco/x3/hidl/radio/2.0/ISap.h>
+#include <vendor/mediatek/hardware/radio/2.0/ISap.h>
 
 #include <hwbinder/IPCThreadState.h>
 #include <hwbinder/ProcessState.h>
