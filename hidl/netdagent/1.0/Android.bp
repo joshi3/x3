@@ -10,7 +10,7 @@ filegroup {
 genrule {
     name: "vendor.mediatek.hardware.netdagent@1.0_genc++",
     tools: ["hidl-gen"],
-    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-sources -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces vendor.mediatek.hardware.netdagent@1.0",
+    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-sources -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:device/leeco/x3/hidl vendor.mediatek.hardware.netdagent@1.0",
     srcs: [
         ":vendor.mediatek.hardware.netdagent@1.0_hal",
     ],
@@ -22,7 +22,7 @@ genrule {
 genrule {
     name: "vendor.mediatek.hardware.netdagent@1.0_genc++_headers",
     tools: ["hidl-gen"],
-    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-headers -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces vendor.mediatek.hardware.netdagent@1.0",
+    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-headers -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:device/leeco/x3/hidl vendor.mediatek.hardware.netdagent@1.0",
     srcs: [
         ":vendor.mediatek.hardware.netdagent@1.0_hal",
     ],

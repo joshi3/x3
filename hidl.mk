@@ -105,3 +105,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 	
+#RADIO
+PRODUCT_PACKAGES += \
+	vendor.mediatek.hardware.netdagent@1.0 \
+	vendor.mediatek.hardware.radio.deprecated@1.1 \
+	vendor.mediatek.hardware.radio@1.1 \
+	android.hardware.radio@1.0 \
+	android.hardware.radio.deprecated@1.0

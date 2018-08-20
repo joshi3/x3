@@ -21,7 +21,7 @@ LOCAL_JAVA_LIBRARIES := \
 #
 # Build IOemHook.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/deprecated/V1_1/IOemHook.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/deprecated/V1_1/IOemHook.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IOemHook.hal
@@ -31,7 +31,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -Ljava \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.radio.deprecated@1.1::IOemHook
 
 $(GEN): $(LOCAL_PATH)/IOemHook.hal
@@ -41,7 +41,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IOemHookIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/deprecated/V1_1/IOemHookIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/deprecated/V1_1/IOemHookIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IOemHookIndication.hal
@@ -51,7 +51,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -Ljava \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.radio.deprecated@1.1::IOemHookIndication
 
 $(GEN): $(LOCAL_PATH)/IOemHookIndication.hal
@@ -61,7 +61,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IOemHookResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/deprecated/V1_1/IOemHookResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/deprecated/V1_1/IOemHookResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IOemHookResponse.hal
@@ -71,7 +71,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -Ljava \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.radio.deprecated@1.1::IOemHookResponse
 
 $(GEN): $(LOCAL_PATH)/IOemHookResponse.hal
@@ -99,7 +99,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 #
 # Build IOemHook.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/deprecated/V1_1/IOemHook.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/deprecated/V1_1/IOemHook.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IOemHook.hal
@@ -109,7 +109,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -Ljava \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.radio.deprecated@1.1::IOemHook
 
 $(GEN): $(LOCAL_PATH)/IOemHook.hal
@@ -119,7 +119,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IOemHookIndication.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/deprecated/V1_1/IOemHookIndication.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/deprecated/V1_1/IOemHookIndication.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IOemHookIndication.hal
@@ -129,7 +129,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -Ljava \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.radio.deprecated@1.1::IOemHookIndication
 
 $(GEN): $(LOCAL_PATH)/IOemHookIndication.hal
@@ -139,7 +139,7 @@ LOCAL_GENERATED_SOURCES += $(GEN)
 #
 # Build IOemHookResponse.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/radio/deprecated/V1_1/IOemHookResponse.java
+GEN := $(intermediates)/device/leeco/x3/hidl/radio/deprecated/V1_1/IOemHookResponse.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/IOemHookResponse.hal
@@ -149,7 +149,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         -Ljava \
         -randroid.hardware:hardware/interfaces \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.radio.deprecated@1.1::IOemHookResponse
 
 $(GEN): $(LOCAL_PATH)/IOemHookResponse.hal

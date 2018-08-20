@@ -19,7 +19,7 @@ filegroup {
 genrule {
     name: "vendor.mediatek.hardware.radio@1.1_genc++",
     tools: ["hidl-gen"],
-    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-sources -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces vendor.mediatek.hardware.radio@1.1",
+    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-sources -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:device/leeco/x3/hidl vendor.mediatek.hardware.radio@1.1",
     srcs: [
         ":vendor.mediatek.hardware.radio@1.1_hal",
     ],
@@ -40,7 +40,7 @@ genrule {
 genrule {
     name: "vendor.mediatek.hardware.radio@1.1_genc++_headers",
     tools: ["hidl-gen"],
-    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-headers -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces vendor.mediatek.hardware.radio@1.1",
+    cmd: "$(location hidl-gen) -o $(genDir) -Lc++-headers -randroid.hardware:hardware/interfaces -randroid.hidl:system/libhidl/transport -rvendor.mediatek.hardware:device/leeco/x3/hidl vendor.mediatek.hardware.radio@1.1",
     srcs: [
         ":vendor.mediatek.hardware.radio@1.1_hal",
     ],

@@ -19,7 +19,7 @@ LOCAL_JAVA_LIBRARIES := \
 #
 # Build INetdagent.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/netdagent/V1_0/INetdagent.java
+GEN := $(intermediates)/device/leeco/x3/hidl/netdagent/V1_0/INetdagent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/INetdagent.hal
@@ -28,7 +28,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         $(PRIVATE_HIDL) -o $(PRIVATE_OUTPUT_DIR) \
         -Ljava \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.netdagent@1.0::INetdagent
 
 $(GEN): $(LOCAL_PATH)/INetdagent.hal
@@ -54,7 +54,7 @@ LOCAL_STATIC_JAVA_LIBRARIES := \
 #
 # Build INetdagent.hal
 #
-GEN := $(intermediates)/vendor/mediatek/hardware/netdagent/V1_0/INetdagent.java
+GEN := $(intermediates)/device/leeco/x3/hidl/netdagent/V1_0/INetdagent.java
 $(GEN): $(HIDL)
 $(GEN): PRIVATE_HIDL := $(HIDL)
 $(GEN): PRIVATE_DEPS := $(LOCAL_PATH)/INetdagent.hal
@@ -63,7 +63,7 @@ $(GEN): PRIVATE_CUSTOM_TOOL = \
         $(PRIVATE_HIDL) -o $(PRIVATE_OUTPUT_DIR) \
         -Ljava \
         -randroid.hidl:system/libhidl/transport \
-        -rvendor.mediatek.hardware:vendor/mediatek/proprietary/hardware/interfaces \
+        -rvendor.mediatek.hardware:device/leeco/x3/hidl \
         vendor.mediatek.hardware.netdagent@1.0::INetdagent
 
 $(GEN): $(LOCAL_PATH)/INetdagent.hal
