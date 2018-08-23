@@ -320,3 +320,7 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
 	libkeymaster_messages \
 	libkeymaster1
+
+#SENSORS
+PRODUCT_PACKAGES += \
+	sensors.x3
