@@ -2,6 +2,7 @@
 
 import init.project.rc
 import init.mt6795.usb.rc
+import init.trustonic.rc
 # init.modem.rc should come at the end
 import init.modem.rc
 
