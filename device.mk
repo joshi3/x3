@@ -316,14 +316,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/manifest.xml:system/vendor/manifest.xml
 
-#KEYMASTER
-PRODUCT_PACKAGES += \
-	libkeymaster_messages \
-	libkeymaster1
-
-#SENSORS
-PRODUCT_PACKAGES += \
-	sensors.x3
 	
 PRODUCT_PACKAGES += \
 	hwcomposer.2 \
