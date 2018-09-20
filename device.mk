@@ -138,7 +138,7 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/ramdisk/init.project.rc:root/init.project.rc \
 #	$(DEVICE_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
 #	$(DEVICE_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
-#	$(DEVICE_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
+	$(DEVICE_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -315,10 +315,3 @@ PRODUCT_COPY_FILES += \
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/manifest.xml:system/vendor/manifest.xml
-
-	
-PRODUCT_PACKAGES += \
-	hwcomposer.2 \
-	libgralloc_extra \
-	libui_ext \
-	hwcomposer.mt6795
