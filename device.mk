@@ -324,3 +324,9 @@ PRODUCT_PACKAGES += \
 #SENSORS
 PRODUCT_PACKAGES += \
 	sensors.x3
+	
+PRODUCT_PACKAGES += \
+	hwcomposer.2 \
+	libgralloc_extra \
+	libui_ext \
+	hwcomposer.mt6795
