@@ -15,3 +15,9 @@ done
 # -----------------------------------
 echo "Changing to build directory..."
 cd $rootdirectory
+
+########## frameworks/opt/tele* ##########
+cd frameworks/opt/tele*
+git remote add vk https://github.com/vishalk95/android_frameworks_opt_telephony_mtk
+git fetch vk
+git cherry-pick 0dad14f3125859db6bcbdb6c17aa03c0088213ad
