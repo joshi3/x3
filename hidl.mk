@@ -1,11 +1,11 @@
 # Power
 PRODUCT_PACKAGES += \
 	android.hardware.power@1.0-impl
-	
+
 # Wifi
 PRODUCT_PACKAGES += \
 	android.hardware.wifi@1.0-service
-	
+
 #GNSS HAL
 PRODUCT_PACKAGES += \
     android.hardware.gnss@1.0-impl
@@ -13,7 +13,7 @@ PRODUCT_PACKAGES += \
 # GPS force mode
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.force.gps.mode=gnss
-	
+
 #Audio HIDL
 PRODUCT_PACKAGES += \
     android.hardware.audio@2.0-impl \
@@ -29,13 +29,13 @@ PRODUCT_PACKAGES += \
     android.hardware.graphics.composer@2.1-impl \
     android.hardware.graphics.mapper@2.0-impl \
     android.hardware.renderscript@1.0-impl
-	
+
 #memtrack
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-imp \
     android.hardware.memtrack@1.0-impl \
     android.hardware.memtrack@1.0-service
-	
+
 # Camera HAL
 PRODUCT_PACKAGES += \
     camera.device@1.0-impl \
@@ -47,7 +47,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.bluetooth@1.0-service \
     android.hardware.bluetooth@1.0-impl
-	
+
 #USB HAL
 PRODUCT_PACKAGES += \
     android.hardware.usb@1.0-service
@@ -78,8 +78,9 @@ PRODUCT_PACKAGES += \
 
 # Sensors
 PRODUCT_PACKAGES += \
-    android.hardware.sensors@1.0-impl \
-    android.hardware.sensors@1.0-service
+	android.hardware.sensors@1.0-service \
+	android.hardware.sensors@1.0-impl.mtk \
+	android.hardware.sensors@1.0-service.mtk
 
 # Drm
 PRODUCT_PACKAGES += \
@@ -103,4 +104,3 @@ PRODUCT_PACKAGES += \
     libOmxVdec \
     libOmxVenc \
     libstagefrighthw
-	
