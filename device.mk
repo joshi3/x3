@@ -43,7 +43,7 @@ PRODUCT_PACKAGES += \
 # Torch
 PRODUCT_PACKAGES += \
 	Torch
-     
+
 # Other
 PRODUCT_PACKAGES += \
 	librs_jni \
@@ -136,9 +136,10 @@ PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/ramdisk/init.mt6795.usb.rc:root/init.mt6795.usb.rc \
 	$(DEVICE_PATH)/ramdisk/ueventd.mt6795.rc:root/ueventd.mt6795.rc \
 	$(DEVICE_PATH)/ramdisk/init.project.rc:root/init.project.rc \
+	$(DEVICE_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
 #	$(DEVICE_PATH)/ramdisk/init.volte.rc:root/init.volte.rc \
 #	$(DEVICE_PATH)/ramdisk/init.mal.rc:root/init.mal.rc \
-	$(DEVICE_PATH)/ramdisk/init.trustonic.rc:root/init.trustonic.rc
+
 
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/handheld_core_hardware.xml:system/etc/permissions/handheld_core_hardware.xml \
@@ -178,7 +179,7 @@ PRODUCT_COPY_FILES += \
 #	$(DEVICE_PATH)/configs/media/media_codecs_ffmpeg.xml:system/vendor/etc/media_codecs_ffmpeg.xml \
 #	$(DEVICE_PATH)/configs/media/media_codecs_mediatek_audio.xml:system/vendor/etc/media_codecs_mediatek_audio.xml\
 #	$(DEVICE_PATH)/configs/media/media_codecs_performance.xml:system/vendor/etc/media_codecs_performance.xml
-	
+
 PRODUCT_COPY_FILES += \
 	$(DEVICE_PATH)/configs/audio/audio_device.xml:system/etc/audio_device.xml \
 	$(DEVICE_PATH)/configs/audio/audio_effects.xml:system/vendor/etc/audio_effects.xml \
@@ -246,7 +247,7 @@ PRODUCT_COPY_FILES += \
 
 PRODUCT_PACKAGES += \
         fingerprint.default
- 
+
 PRODUCT_COPY_FILES += \
 	frameworks/native/data/etc/android.hardware.fingerprint.xml:system/etc/permissions/android.hardware.fingerprint.xml
 
@@ -280,7 +281,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
 	libbt-vendor \
 	libbluetooth_mtk
-	
+
 # Lights
 PRODUCT_PACKAGES += \
         lights.mt6795
@@ -315,3 +316,9 @@ PRODUCT_COPY_FILES += \
 # HIDL Manifest
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/manifest.xml:system/vendor/manifest.xml
+
+#GRAPHICS
+PRODUCT_COPY_FILES += \
+	libgui_ext \
+	libui_ext \
+	libgralloc_extra
