@@ -1,0 +1,1 @@
+void _ZNK7android16SensorEventQueue12setEventRateEPKNS_6SensorEx() {}

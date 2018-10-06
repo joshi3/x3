@@ -11,7 +11,8 @@ LOCAL_SRC_FILES := \
 	icu55.c \
 	crypto.c \
 	ssl.c \
-	mtk_cam.cpp
+	mtk_cam.cpp \
+	camera.c
 
 # only for 32bit libraries
 LOCAL_SRC_FILES_32 := mtk_string.cpp
